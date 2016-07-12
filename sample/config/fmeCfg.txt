@@ -1,0 +1,81 @@
+{
+  "GuestAccount":{
+    "username":"guest",
+    "password":"guest" 
+  },
+  "defaultSettings":{
+    "transformationService":"fmedatadownload",
+    "opt_showresult":"false",
+    "opt_servicemode":"async",
+    "opt_responseformat":"json"
+  },   
+  "fmeServices": 
+  [
+    {
+      "serviceID": "fmeServer-pgis",
+      "serviceTitle": 
+      {"en": "Service: fmeServer-pgis", "fr": "Service: fmeServer-pgis"},
+      "serverURL": "http://160.106.67.238",
+      "repository": "test",
+      "serviceName": "pgis2generic.fmw",
+      "extractionZoneParamName": "EXTRACT_GEOMETRY",
+      "maxAreaParamName": "SERVICE_MAX_EXTENT_AREA",
+      "DOMElement": "layers1",
+      "DOMHTMLEvent": "onclick"
+    },
+    {
+      "serviceID": "fmeServer-fgdb",
+      "serviceTitle": 
+      {"en": "Service: fmeServer-fgdb", "fr": "Service: fmeServer-fgdb"},
+      "serverURL": "http://160.106.67.237",
+      "repository": "test",
+      "serviceName": "fgdb2generic.fmw",
+      "DOMElement": "layers1",
+      "DOMHTMLEvent": "onclick",
+       "extractionZoneParamName": "EXTRACT_GEOMETRY",
+      "maxAreaParamName": "SERVICE_MAX_EXTENT_AREA"
+    },
+    {
+      "serviceID": "fmeServer-interface",
+      "serviceTitle": 
+      {"en": "Service: fmeServer-interface", "fr": "Service: fmeServer-interface"},
+      "serverURL": "http://160.106.67.238",
+      "repository": "test",
+      "serviceName": "test_interface.fmw",
+      "DOMElement": "layers1",
+      "DOMElement": "onclick",
+      "extractionZoneParamName": "EXTRACT_GEOMETRY",
+      "maxAreaParamName": "SERVICE_MAX_EXTENT_AREA"
+    },
+    {
+      "serviceID": "fmeServer-canvec",
+      "serviceTitle": 
+      {"en": "Service: fmeServer-canvec", "fr": "Service: fmeServer-canvec"},
+      "serverURL": "http://160.106.131.168",
+      "repository": "CZS",
+      "serviceName": "czsPostgisCanveVector.fmw",
+      "DOMElement": "layers1",
+      "DOMHTMLEvent": "onclick",
+      "extractionZoneParamName": "EXTRACT_GEOMETRY",
+      "maxAreaParamName": "SERVICE_MAX_EXTENT_AREA"
+    },
+	{
+      "serviceID": "fmeServer-raster",
+      "serviceTitle": 
+      {"en": "Service: fmeServer-raster", "fr": "Service: fmeServer-matriciel"},
+      "serverURL": "http://160.106.131.168",
+      "repository": "CZS",
+      "serviceName": "TestPostgisRasterSpatialExtractor.fmw",
+      "DOMElement": "layers1",
+      "DOMHTMLEvent": "onclick",
+      "extractionZoneParamName": "EXTRACT_GEOMETRY",
+      "maxAreaParamName": "SERVICE_MAX_EXTENT_AREA"
+    }
+  ],
+  
+  "HTMLContainers":
+    {
+      "form": "FMENRCanFormSection",
+      "messages": "FMENRCanMessageSection"
+    }
+}
