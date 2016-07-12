@@ -1,0 +1,33 @@
+{
+  "GuestAccount":{
+    "username":"",
+    "password":"" 
+  },
+  "defaultSettings":{
+    "transformationService":"fmedatadownload",
+    "opt_showresult":"false",
+    "opt_servicemode":"async",
+    "opt_responseformat":"json"
+  },   
+  "fmeServices": 
+  [
+    {
+      "serviceID": "",
+      "serviceTitle": 
+      {"en": "", "fr": ""},
+      "serverURL": "",
+      "repository": "",
+      "serviceName": "",
+      "extractionZoneParamName": "",
+      "maxAreaParamName": "",
+      "DOMElement": "layers1",
+      "DOMHTMLEvent": "onclick"
+    },
+  ],
+  
+"HTMLContainers":
+    {
+      "form": "FMENRCanFormSection",
+      "messages": "FMENRCanMessageSection"
+    }
+  }
