@@ -514,7 +514,8 @@ var objGeneral = (function () {
         var request = new XMLHttpRequest();
         request.open('GET', url, false);
         request.send(null);
-        if (request.readyState === 4) {
+        request.onreadystatechange = function(){
+          if (request.readyState === 4) {
             if (request.status !== 200) {
                 data.status = 'fail';
                 data.data = request.status + ': ' + request.statusText;
@@ -532,10 +533,11 @@ var objGeneral = (function () {
                 }
             }
 
-        } else {
+          } else {
 
-            errorCode = request.status;
-            data = fncts.packJSend('error', errorMsg, errorCode);
+              errorCode = request.status;
+              data = fncts.packJSend('error', errorMsg, errorCode);
+          }
         }
 
         return data;
