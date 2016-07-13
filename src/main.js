@@ -657,19 +657,16 @@ var objConfig = (function () {
 
         var isValidFile = objGeneral.validateFile(src, ["json", "txt"]);
         if (isValidFile) {
-            objGeneral.getAsync(src, function(rsp){
-                cnf.data = rsp.data;
-                cnf.status = rsp.status;
-                
-                if (cnf.status === 'success') {
-                    cnf.data.lng = lng;
-                }
-            });
-            
+            rsp = objGeneral.getSync(src);
+            cnf.data = rsp.data;
+            cnf.status = rsp.status;
         } else {
             cnf = objGeneral.packJSend('fail', objSetting.msg.failedRead[lng] + '' + objSetting.msg.fileExt[lng]);
         }
 
+        if (cnf.status === 'success') {
+            cnf.data.lng = lng;
+        }
         return cnf;
     };
 
