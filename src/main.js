@@ -657,7 +657,7 @@ var objConfig = (function () {
 
         var isValidFile = objGeneral.validateFile(src, ["json", "txt"]);
         if (isValidFile) {
-            rsp = objGeneral.getSync(src);
+            rsp = objGeneral.getAsync(src);
             cnf.data = rsp.data;
             cnf.status = rsp.status;
         } else {
