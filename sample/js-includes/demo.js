@@ -14,7 +14,7 @@ var servicesLinks = '';
 var linkTmpl = '<a href="{href}" id="{id}" class="list-group-item">{name}</a>';
 
 //link to the configuration file
-var src = '/js-map/sample/config/fmeCfg.txt';
+var src = '../sample/config/fmeCfg.txt';
 
 // initiate configuration object
 objConfig.init(src);
