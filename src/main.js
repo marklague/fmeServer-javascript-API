@@ -657,9 +657,11 @@ var objConfig = (function () {
 
         var isValidFile = objGeneral.validateFile(src, ["json", "txt"]);
         if (isValidFile) {
-            rsp = objGeneral.getAsync(src);
-            cnf.data = rsp.data;
-            cnf.status = rsp.status;
+            rsp = objGeneral.getAsync(src, function(rsp){
+                cnf.data = rsp.data;
+                cnf.status = rsp.status;
+            });
+            
         } else {
             cnf = objGeneral.packJSend('fail', objSetting.msg.failedRead[lng] + '' + objSetting.msg.fileExt[lng]);
         }
