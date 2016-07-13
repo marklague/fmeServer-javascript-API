@@ -512,10 +512,9 @@ var objGeneral = (function () {
         var errorMsg = '';
         var data = {};
         var request = new XMLHttpRequest();
-        request.open('GET', url, false);
+        request.open('GET', url);
         request.send(null);
-        request.onreadystatechange = function(){
-          if (request.readyState === 4) {
+        if (request.readyState === 4) {
             if (request.status !== 200) {
                 data.status = 'fail';
                 data.data = request.status + ': ' + request.statusText;
@@ -533,11 +532,10 @@ var objGeneral = (function () {
                 }
             }
 
-          } else {
+        } else {
 
-              errorCode = request.status;
-              data = fncts.packJSend('error', errorMsg, errorCode);
-          }
+            errorCode = request.status;
+            data = fncts.packJSend('error', errorMsg, errorCode);
         }
 
         return data;
