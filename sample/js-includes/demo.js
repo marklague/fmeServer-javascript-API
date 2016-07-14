@@ -17,9 +17,11 @@ var linkTmpl = '<a href="{href}" id="{id}" class="list-group-item">{name}</a>';
 var src = '../sample/config/fmeCfg.txt';
 
 // initiate configuration object
-objConfig.init(src);
+// initiate configuration object
+objConfig.init(src, lng, addServices);
 
-//get configuration objects, that are the same for all services
+function addServices(objConfig){
+  //get configuration objects, that are the same for all services
 var user = objConfig.getConfigElement('GuestAccount').data;
 var setting = objConfig.getConfigElement('defaultSettings').data;
 var container = objConfig.getConfigElement('HTMLContainers').data;
@@ -85,6 +87,7 @@ jQuery(document)
         }   
 
     });
+}
 
 wb.doc.on("geomap.ready", function () {
     'use strict';
