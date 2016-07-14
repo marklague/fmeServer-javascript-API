@@ -657,19 +657,22 @@ var objConfig = (function () {
 
         var isValidFile = objGeneral.validateFile(src, ["json", "txt"]);
         if (isValidFile) {
-            rsp = objGeneral.getSync(src);
-            cnf.data = rsp.data;
-            cnf.status = rsp.status;
+            rsp = objGeneral.getAsync(src, function(rsp){
+              cnf.data = rsp.data;
+              cnf.status = rsp.status;
+              
+              if (cnf.status === 'success') {
+                cnf.data.lng = lng;
+              }
+              if (callback && typeof(callback)==="function") {
+                callback(cnf);
+              }
+            });
+
         } else {
             cnf = objGeneral.packJSend('fail', objSetting.msg.failedRead[lng] + '' + objSetting.msg.fileExt[lng]);
         }
 
-        if (cnf.status === 'success') {
-            cnf.data.lng = lng;
-        }
-        if (callback && typeof(callback)==="function") {
-          callback(cnf);
-        }
     };
 
     /**
