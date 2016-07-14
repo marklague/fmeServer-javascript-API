@@ -646,7 +646,7 @@ var objConfig = (function () {
      * @return {string} cnf.status - success/fail
      * @return {object} cnf.data - configuration parameters
      */
-    cnf.init = function (src, lng) {
+    cnf.init = function (src, lng, callback) {
         src = src || '';
         lng = lng || _getLanguage();
         var lngOptions = ['en', 'fr'];
@@ -667,7 +667,9 @@ var objConfig = (function () {
         if (cnf.status === 'success') {
             cnf.data.lng = lng;
         }
-        return cnf;
+        if (callback && typeof(callback)==="function") {
+          callback(cnf);
+        }
     };
 
     /**
