@@ -473,7 +473,8 @@ var objGeneral = (function () {
         var data = {};
         var jqxhr = jQuery.ajax({
                 url: url,
-                dataType: 'json'
+                dataType: 'json',
+                crossDomain: true
             })
             .done(function (data) {
                 var response = fncts.packJSend('success', data);
@@ -672,6 +673,8 @@ var objConfig = (function () {
         } else {
             cnf = objGeneral.packJSend('fail', objSetting.msg.failedRead[lng] + '' + objSetting.msg.fileExt[lng]);
         }
+        
+        return cnf;
 
     };
 
