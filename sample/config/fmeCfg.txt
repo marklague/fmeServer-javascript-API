@@ -29,7 +29,7 @@
       {"en": "Service: fmeServer-raster", "fr": "Service: fmeServer-matriciel"},
       "serverURL": "http://160.106.131.168",
       "repository": "CZS",
-      "serviceName": "TestPostgisRasterSpatialExtractor.fmw",
+      "serviceName": "PostgisRasterSpatialExtractor.fmw",
       "DOMElement": "layers1",
       "DOMHTMLEvent": "onclick",
       "extractionZoneParamName": "EXTRACT_GEOMETRY",
